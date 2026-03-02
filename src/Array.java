@@ -13,7 +13,7 @@ public class Array {
     }
 
     double findBiggest(double[] arr) {
-        double biggest = -999999999;
+        double biggest = Double.MIN_VALUE;
 
         for (double number : arr) {
             if (number <= biggest) continue;
