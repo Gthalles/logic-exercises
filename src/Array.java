@@ -35,6 +35,18 @@ public class Array {
 
         return count;
     }
+
+    int[] reverseArr(int[] arr) {
+        int index = 0;
+        int[] reversedArray = arr.clone();
+
+        for (int i = arr.length - 1; i >= 0; i--) {
+            reversedArray[index] = arr[i];
+            index++;
+        }
+
+        return reversedArray;
+    }
 }
 
 /*
