@@ -2,10 +2,7 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 void main() {
     Array arrUtil = new Array();
-
-    int[] intArr = {55, 44, 33, 22, 11};
-    double[] arr = {1, 2, 3, 4.44, -4.43};
-    Integer[] integerArr = {55, 44, 33, 22, 11, 55};
+    Integer[] arr = {55, 44, 33, 22, 11, 55};
 
     var sumResult = arrUtil.getSum(arr);
     IO.println("Sum array elements: " + sumResult);
@@ -13,19 +10,19 @@ void main() {
     var biggestNumber = arrUtil.findBiggest(arr);
     IO.println("Biggest number in array: " + biggestNumber);
 
-    var evensCount = arrUtil.countEven(intArr);
+    var evensCount = arrUtil.countEven(arr);
     IO.println("Occurrence of evens numbers: " + evensCount);
 
-    var reversedArray = arrUtil.reverseArr(intArr);
+    var reversedArray = arrUtil.reverseArr(arr);
     IO.println("Reversed array: " + Arrays.toString(reversedArray));
 
-    var arrHashSet = arrUtil.removeDuplicates(integerArr);
+    var arrHashSet = arrUtil.removeDuplicates(arr);
     IO.println("Array of unique elements: " + arrHashSet);
 
-    var secondBiggestNumber = arrUtil.findSecondBiggestNumber(intArr);
+    var secondBiggestNumber = arrUtil.findSecondBiggestNumber(arr);
     IO.println("Second biggest number in array: " + secondBiggestNumber);
 
-    var positiveOnlyNumbersSum = arrUtil.sumOnlyPositiveNumber(intArr);
+    var positiveOnlyNumbersSum = arrUtil.sumOnlyPositiveNumber(arr);
     IO.println("Only positive numbers sum: " + positiveOnlyNumbersSum);
 }
 

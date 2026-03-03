@@ -2,20 +2,20 @@ import java.math.RoundingMode;
 import java.util.*;
 
 public class Array {
-    double getSum(double[] arr) {
-        double sum = 0;
+    Integer getSum(Integer[] arr) {
+        var sum = 0;
 
-        for (int i = 0; i < arr.length; i++) {
-            sum += arr[i];
+        for (Integer number : arr) {
+            sum += number;
         }
 
         return sum;
     }
 
-    double findBiggest(double[] arr) {
-        double biggest = Double.MIN_VALUE;
+    double findBiggest(Integer[] arr) {
+        var biggest = Double.MIN_VALUE;
 
-        for (double number : arr) {
+        for (Integer number : arr) {
             if (number <= biggest) continue;
 
             biggest = number;
@@ -24,10 +24,10 @@ public class Array {
         return biggest;
     }
 
-    int countEven(int[] arr) {
-        int count = 0;
+    Integer countEven(Integer[] arr) {
+        var count = 0;
 
-        for (int n : arr) {
+        for (Integer n : arr) {
             if (n % 2 != 0) continue;
 
             count++;
@@ -36,9 +36,9 @@ public class Array {
         return count;
     }
 
-    int[] reverseArr(int[] arr) {
-        int index = 0;
-        int[] reversedArray = arr.clone();
+    Integer[] reverseArr(Integer[] arr) {
+        var index = 0;
+        var reversedArray = arr.clone();
 
         for (int i = arr.length - 1; i >= 0; i--) {
             reversedArray[index] = arr[i];
@@ -54,11 +54,11 @@ public class Array {
         return new LinkedHashSet<Integer>(arrList);
     }
 
-    Integer findSecondBiggestNumber(int[] arr) {
+    Integer findSecondBiggestNumber(Integer[] arr) {
         var biggest = Integer.MIN_VALUE;
         var secondBiggest = Integer.MIN_VALUE;
 
-        for (int number : arr) {
+        for (Integer number : arr) {
             if (number > biggest) {
                 biggest = number;
             } else if (number > secondBiggest) {
@@ -69,10 +69,10 @@ public class Array {
         return secondBiggest;
     }
 
-    int sumOnlyPositiveNumber(int[] arr) {
+    Integer sumOnlyPositiveNumber(Integer[] arr) {
         var sum = 0;
 
-        for (int number : arr) {
+        for (Integer number : arr) {
             if (number <= 0) continue;
             sum += number;
         }
@@ -80,14 +80,3 @@ public class Array {
         return sum;
     }
 }
-
-/*
-1. Soma de elementos do array.
-2. Encontrar o maior número (sem Math.max).
-3. Contar quantos números pares existem.
-4. Inverter um array sem usar .reverse().
-5. Remover duplicados de um array.
-6. Encontrar o segundo maior número.
-7. Somar apenas números positivos de um array.
-8. Rotacionar um array k posições (ex: [1,2,3,4,5], k=2 → [4,5,1,2,3]).
-*/
