@@ -25,7 +25,10 @@ void main() {
     var positiveOnlyNumbersSum = arrUtil.sumOnlyPositiveNumber(arr);
     IO.println("Only positive numbers sum: " + positiveOnlyNumbersSum);
 
-    var rotatedArr = arrUtil.rotateArray(arr, -2);
-    IO.println("Rotated array: " + Arrays.toString(rotatedArr));
+    var leftRotatedArr = arrUtil.rotateArray(arr, -2);
+    IO.println("Rotated array two positions to left: " + Arrays.toString(leftRotatedArr));
+
+    var rightRotatedArr = arrUtil.rotateArray(arr, 2);
+    IO.println("Rotated array two positions to right: " + Arrays.toString(rightRotatedArr));
 }
 
