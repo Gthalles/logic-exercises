@@ -1,6 +1,4 @@
-import java.util.List;
-import java.util.Objects;
-import java.util.LinkedHashMap;
+import java.util.*;
 
 public class StringUtils {
     String reverseString(String str) {
@@ -46,5 +44,33 @@ public class StringUtils {
         }
 
         return frequencyMap;
+    }
+
+    String removeDuplicates(String str) {
+        var result = "";
+        var charFrequency = new HashMap<Character, Integer>();
+
+        for (char element : str.toCharArray()) {
+            var convertedElement = String.valueOf(element);
+
+            if (charFrequency.get(element) == null) {
+                charFrequency.put(element, 1);
+                result = result.concat(convertedElement);
+            }
+        }
+
+        return result;
+    }
+
+    boolean isAnagram(String str) {
+        var reversedString = "";
+        var startIndex = str.length() - 1;
+
+        for (int i = startIndex; i >= 0; i--) {
+            var letterString = String.valueOf(str.charAt(i));
+            reversedString = reversedString.concat(letterString);
+        }
+
+        return Objects.equals(str, reversedString);
     }
 }

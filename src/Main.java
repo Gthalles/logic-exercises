@@ -47,5 +47,10 @@ void main() {
     var charFrequency = strUtils.getCharFrequency(str);
     IO.println("Char frequency: " + charFrequency);
 
+    var strWithoutDuplicates = strUtils.removeDuplicates(str);
+    IO.println("String without duplicates: " + strWithoutDuplicates);
+
+    var isAnagram = strUtils.isAnagram("bsanasb");
+    IO.println("Is anagram: " + isAnagram);
 }
 
