@@ -86,4 +86,31 @@ public class StringUtils {
 
         return result;
     }
+
+    String findBiggestSubstringWithoutRepeatedCharacter(String str) {
+        int end;
+        var start = 0;
+        var biggestSubstring = "";
+        var charIndexMapper = new HashMap<Character, Integer>();
+
+        for (int i = 0; i < str.length(); i++) {
+            end = i + 1;
+            var currentChar = str.charAt(i);
+            var charIndex = charIndexMapper.get(currentChar);
+
+            if (charIndex != null && charIndex >= start) {
+                start = charIndex + 1;
+            }
+
+            charIndexMapper.put(currentChar, i);
+
+            var currentSubstring = str.substring(start, end);
+
+            if (currentSubstring.length() > biggestSubstring.length()) {
+                biggestSubstring = currentSubstring;
+            }
+        }
+
+        return  biggestSubstring;
+    }
 }

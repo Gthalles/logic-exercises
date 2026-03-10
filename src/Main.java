@@ -56,4 +56,8 @@ void main() {
 
     var stringWithoutSpaces = strUtils.encodeString(str);
     IO.println("Replace spaces with %20 (input: \"" + str + "\") result: " + stringWithoutSpaces);
+
+    var biggestSubstring = strUtils.findBiggestSubstringWithoutRepeatedCharacter(str);
+    IO.println("Substring without repeated chars (input: \"" + str + "\") result: " + biggestSubstring);
+
 }
