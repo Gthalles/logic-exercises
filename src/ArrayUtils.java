@@ -11,8 +11,8 @@ public class ArrayUtils {
         return sum;
     }
 
-    double findBiggest(Integer[] arr) {
-        var biggest = Double.MIN_VALUE;
+    Integer findBiggest(Integer[] arr) {
+        var biggest = Integer.MIN_VALUE;
 
         for (Integer number : arr) {
             if (number <= biggest) continue;
@@ -47,7 +47,7 @@ public class ArrayUtils {
         return reversedArray;
     }
 
-    Set<Integer> removeDuplicates(Integer[] arr) {
+    LinkedHashSet<Integer> removeDuplicates(Integer[] arr) {
         var arrList = List.of(arr);
 
         return new LinkedHashSet<Integer>(arrList);
@@ -88,5 +88,24 @@ public class ArrayUtils {
             }
 
         return rotatedArray;
+    }
+
+    Integer findMaxSubArraySum(Integer[] arr) {
+        var maxSum = arr[0];
+        var currentSum = arr[0];
+
+        for (var i = 1; i < arr.length; i++) {
+            var nextSum = currentSum + arr[i];
+
+            if (nextSum > currentSum) {
+                currentSum = nextSum;
+            }
+
+            if (currentSum > maxSum) {
+                maxSum = currentSum;
+            }
+        }
+
+        return maxSum;
     }
 }
