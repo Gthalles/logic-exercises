@@ -1,7 +1,17 @@
 import java.util.*;
 
 public class StringUtils {
-    String reverseString(String str) {
+    String str;
+
+    public StringUtils(String str) {
+        if (str == null || str.isEmpty()) {
+            throw new IllegalArgumentException("String must have characters");
+        }
+
+        this.str = str;
+    }
+
+    String reverseString() {
         StringBuilder reversedString = new StringBuilder();
 
         for (int index = str.length() - 1; index >= 0; index--) {
@@ -13,12 +23,12 @@ public class StringUtils {
         return reversedString.toString();
     }
 
-    boolean isPalindrome(String str) {
-        var reversedStr = this.reverseString(str);
+    boolean isPalindrome() {
+        var reversedStr = this.reverseString();
         return reversedStr.equals(str);
     }
 
-    int countVowels(String str) {
+    int countVowels() {
         var count = 0;
         var vowels = List.of("a", "e", "i", "o", "u");
 
@@ -33,7 +43,7 @@ public class StringUtils {
         return count;
     }
 
-    LinkedHashMap<Character, Integer> getCharFrequency(String str) {
+    LinkedHashMap<Character, Integer> getCharFrequency() {
         var frequencyMap = new LinkedHashMap<Character, Integer>();
 
         for (char element : str.toCharArray()) {
@@ -46,7 +56,7 @@ public class StringUtils {
         return frequencyMap;
     }
 
-    String removeDuplicates(String str) {
+    String removeDuplicates() {
         var result = "";
         var charFrequency = new HashMap<Character, Integer>();
 
@@ -62,19 +72,7 @@ public class StringUtils {
         return result;
     }
 
-    boolean isAnagram(String str) {
-        var reversedString = "";
-        var startIndex = str.length() - 1;
-
-        for (int i = startIndex; i >= 0; i--) {
-            var letterString = String.valueOf(str.charAt(i));
-            reversedString = reversedString.concat(letterString);
-        }
-
-        return Objects.equals(str, reversedString);
-    }
-
-    String encodeString(String str) {
+    String encodeString() {
         var result = "";
 
         for (int i = 0; i < str.length(); i++) {
@@ -87,7 +85,7 @@ public class StringUtils {
         return result;
     }
 
-    String findBiggestSubstringWithoutRepeatedCharacter(String str) {
+    String findBiggestSubstringWithoutRepeatedCharacter() {
         int end;
         var start = 0;
         var biggestSubstring = "";

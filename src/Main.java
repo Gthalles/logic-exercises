@@ -2,14 +2,14 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 import java.util.Arrays;
 
-void main() {
+public static void main() {
     Printer printer = new Printer();
 
     Integer[] arr = {55, 44, 33, 22, 11, 0};
     ArrayUtils arrUtils = new ArrayUtils(arr);
 
     String str = "thalles garbelotti";
-    StringUtils strUtils = new StringUtils();
+    StringUtils strUtils = new StringUtils(str);
 
     IO.println("Arrays Section");
     IO.println("Input: " + Arrays.toString(arr) + "\n");
@@ -47,27 +47,24 @@ void main() {
     IO.println("\nStrings Section");
     IO.println("Input: " + str + "\n");
 
-    var reversedStr = strUtils.reverseString(str);
+    var reversedStr = strUtils.reverseString();
     printer.write("Reversed string", reversedStr);
 
-    var palindrome = strUtils.isPalindrome(str);
+    var palindrome = strUtils.isPalindrome();
     printer.write("Is palindrome?", palindrome);
 
-    var vowelsCount = strUtils.countVowels(str);
+    var vowelsCount = strUtils.countVowels();
     printer.write("Vowels number", vowelsCount);
 
-    var charFrequency = strUtils.getCharFrequency(str);
+    var charFrequency = strUtils.getCharFrequency();
     printer.write("Char frequency", charFrequency);
 
-    var strWithoutDuplicates = strUtils.removeDuplicates(str);
+    var strWithoutDuplicates = strUtils.removeDuplicates();
     printer.write("String without duplicates", strWithoutDuplicates);
 
-    var isAnagram = strUtils.isAnagram(str);
-    printer.write("Is anagram?", isAnagram);
-
-    var stringWithoutSpaces = strUtils.encodeString(str);
+    var stringWithoutSpaces = strUtils.encodeString();
     printer.write("Replace spaces with %20", stringWithoutSpaces);
 
-    var biggestSubstring = strUtils.findBiggestSubstringWithoutRepeatedCharacter(str);
+    var biggestSubstring = strUtils.findBiggestSubstringWithoutRepeatedCharacter();
     printer.write("Substring without repeated chars", biggestSubstring);
 }

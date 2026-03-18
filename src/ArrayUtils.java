@@ -5,7 +5,7 @@ public class ArrayUtils {
 
     public ArrayUtils(Integer[] arr) {
         if (arr.length == 0) {
-            throw  new Error("Array must elements");
+            throw  new Error("IllegalArgumentException");
         }
 
         this.arr = arr;
