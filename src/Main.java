@@ -14,34 +14,34 @@ void main() {
     IO.println("Arrays Section");
     IO.println("Input: " + Arrays.toString(arr) + "\n");
 
-    var sumResult = arrUtils.getSum(arr);
+    var sumResult = arrUtils.getSum();
     printer.write("Sum array elements", sumResult);
 
-    var biggestNumber = arrUtils.findBiggest(arr);
+    var biggestNumber = arrUtils.findBiggest();
     printer.write("Biggest number in array", biggestNumber);
 
-    var evensCount = arrUtils.countEven(arr);
+    var evensCount = arrUtils.countEven();
     printer.write("Occurrences of evens numbers", evensCount);
 
-    var reversedArray = arrUtils.reverseArr(arr);
+    var reversedArray = arrUtils.reverseArr();
     printer.write("Reversed array", reversedArray);
 
-    var arrHashSet = arrUtils.removeDuplicates(arr);
+    var arrHashSet = arrUtils.removeDuplicates();
     printer.write("HashSet of unique elements", arrHashSet);
 
-    var secondBiggestNumber = arrUtils.findSecondBiggestNumber(arr);
+    var secondBiggestNumber = arrUtils.findSecondBiggestNumber();
     printer.write("Second biggest number in array", secondBiggestNumber);
 
-    var positiveOnlyNumbersSum = arrUtils.sumOnlyPositiveNumber(arr);
+    var positiveOnlyNumbersSum = arrUtils.sumOnlyPositiveNumber();
     printer.write("Sum only positive numbers", positiveOnlyNumbersSum);
 
-    var leftRotatedArr = arrUtils.rotateArray(arr, -2);
+    var leftRotatedArr = arrUtils.rotateArray(-2);
     printer.write("Rotated array 2 positions to left", leftRotatedArr);
 
-    var rightRotatedArr = arrUtils.rotateArray(arr, 2);
+    var rightRotatedArr = arrUtils.rotateArray(2);
     printer.write("Rotated array 2 positions to right", rightRotatedArr);
 
-    var maxSubArraySum = arrUtils.findMaxSubArraySum(arr);
+    var maxSubArraySum = arrUtils.findMaxSubArraySum();
     printer.write("Biggest sum of a subarray into array", maxSubArraySum);
 
     IO.println("\nStrings Section");
