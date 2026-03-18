@@ -1,7 +1,17 @@
 import java.util.*;
 
 public class ArrayUtils {
-    Integer getSum(Integer[] arr) {
+    Integer[] arr;
+
+    public ArrayUtils(Integer[] arr) {
+        if (arr.length == 0) {
+            throw  new Error("Array must elements");
+        }
+
+        this.arr = arr;
+    }
+
+    Integer getSum() {
         var sum = 0;
 
         for (Integer number : arr) {
@@ -11,7 +21,7 @@ public class ArrayUtils {
         return sum;
     }
 
-    Integer findBiggest(Integer[] arr) {
+    Integer findBiggest() {
         var biggest = Integer.MIN_VALUE;
 
         for (Integer number : arr) {
@@ -23,7 +33,7 @@ public class ArrayUtils {
         return biggest;
     }
 
-    Integer countEven(Integer[] arr) {
+    Integer countEven() {
         var count = 0;
 
         for (Integer n : arr) {
@@ -35,7 +45,7 @@ public class ArrayUtils {
         return count;
     }
 
-    Integer[] reverseArr(Integer[] arr) {
+    Integer[] reverseArr() {
         var index = 0;
         var reversedArray = arr.clone();
 
@@ -47,13 +57,13 @@ public class ArrayUtils {
         return reversedArray;
     }
 
-    LinkedHashSet<Integer> removeDuplicates(Integer[] arr) {
+    LinkedHashSet<Integer> removeDuplicates() {
         var arrList = List.of(arr);
 
         return new LinkedHashSet<Integer>(arrList);
     }
 
-    Integer findSecondBiggestNumber(Integer[] arr) {
+    Integer findSecondBiggestNumber() {
         var biggest = Integer.MIN_VALUE;
         var secondBiggest = Integer.MIN_VALUE;
 
@@ -68,7 +78,7 @@ public class ArrayUtils {
         return secondBiggest;
     }
 
-    Integer sumOnlyPositiveNumber(Integer[] arr) {
+    Integer sumOnlyPositiveNumber() {
         var sum = 0;
 
         for (Integer number : arr) {
@@ -79,7 +89,7 @@ public class ArrayUtils {
         return sum;
     }
 
-    Integer[] rotateArray(Integer[] arr, Integer positions) {
+    Integer[] rotateArray(Integer positions) {
         var rotatedArray = arr.clone();
 
             for (int index = 0; index < arr.length; index++) {
@@ -90,7 +100,7 @@ public class ArrayUtils {
         return rotatedArray;
     }
 
-    Integer findMaxSubArraySum(Integer[] arr) {
+    Integer findMaxSubArraySum() {
         var maxSum = arr[0];
         var currentSum = arr[0];
 

@@ -4,11 +4,12 @@ import java.util.Arrays;
 
 void main() {
     Printer printer = new Printer();
-    ArrayUtils arrUtils = new ArrayUtils();
-    StringUtils strUtils = new StringUtils();
+
+    Integer[] arr = {55, 44, 33, 22, 11, 0};
+    ArrayUtils arrUtils = new ArrayUtils(arr);
 
     String str = "thalles garbelotti";
-    Integer[] arr = {55, 44, 33, 22, 11, 0};
+    StringUtils strUtils = new StringUtils();
 
     IO.println("Arrays Section");
     IO.println("Input: " + Arrays.toString(arr) + "\n");
@@ -43,28 +44,30 @@ void main() {
     var maxSubArraySum = arrUtils.findMaxSubArraySum(arr);
     printer.write("Biggest sum of a subarray into array", maxSubArraySum);
 
-    // Strings
+    IO.println("\nStrings Section");
+    IO.println("Input: " + str + "\n");
+
     var reversedStr = strUtils.reverseString(str);
-    IO.println("Reversed string (input: \"" + str + "\") result: " + reversedStr);
+    printer.write("Reversed string", reversedStr);
 
     var palindrome = strUtils.isPalindrome(str);
-    IO.println("Is palindrome? (input: \"" + str + "\") result: " + palindrome);
+    printer.write("Is palindrome?", palindrome);
 
     var vowelsCount = strUtils.countVowels(str);
-    IO.println("Vowels number (input: \"" + str + "\") result: " + vowelsCount);
+    printer.write("Vowels number", vowelsCount);
 
     var charFrequency = strUtils.getCharFrequency(str);
-    IO.println("Char frequency (input: \"" + str + "\") result: " + charFrequency);
+    printer.write("Char frequency", charFrequency);
 
     var strWithoutDuplicates = strUtils.removeDuplicates(str);
-    IO.println("String without duplicates (input: \"" + str + "\") result: " + strWithoutDuplicates);
+    printer.write("String without duplicates", strWithoutDuplicates);
 
     var isAnagram = strUtils.isAnagram(str);
-    IO.println("Is anagram? (input: \"" + str + "\") result: " + isAnagram);
+    printer.write("Is anagram?", isAnagram);
 
     var stringWithoutSpaces = strUtils.encodeString(str);
-    IO.println("Replace spaces with %20 (input: \"" + str + "\") result: " + stringWithoutSpaces);
+    printer.write("Replace spaces with %20", stringWithoutSpaces);
 
     var biggestSubstring = strUtils.findBiggestSubstringWithoutRepeatedCharacter(str);
-    IO.println("Substring without repeated chars (input: \"" + str + "\") result: " + biggestSubstring);
+    printer.write("Substring without repeated chars", biggestSubstring);
 }
