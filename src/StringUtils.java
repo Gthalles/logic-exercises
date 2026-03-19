@@ -33,7 +33,7 @@ public class StringUtils {
         var vowels = List.of("a", "e", "i", "o", "u");
 
         for (char element : str.toCharArray()) {
-            var letter = Objects.toString(element);
+            var letter = Objects.toString(element).toLowerCase();
 
             if (vowels.contains(letter)) {
                 count++;
@@ -43,14 +43,15 @@ public class StringUtils {
         return count;
     }
 
-    LinkedHashMap<Character, Integer> getCharFrequency() {
-        var frequencyMap = new LinkedHashMap<Character, Integer>();
+    LinkedHashMap<String, Integer> getCharFrequency() {
+        var frequencyMap = new LinkedHashMap<String, Integer>();
 
-        for (char element : str.toCharArray()) {
-            var currentFrequency = frequencyMap.get(element);
+        for (char letter : str.toCharArray()) {
+            var letterInLowerCase = String.valueOf(letter).toLowerCase();
+            var currentFrequency = frequencyMap.get(letterInLowerCase);
 
-            if (currentFrequency == null) frequencyMap.put(element, 1);
-            else frequencyMap.put(element, currentFrequency + 1);
+            if (currentFrequency == null) frequencyMap.put(letterInLowerCase, 1);
+            else frequencyMap.put(letterInLowerCase, currentFrequency + 1);
         }
 
         return frequencyMap;
@@ -61,7 +62,7 @@ public class StringUtils {
         var charFrequency = new HashMap<Character, Integer>();
 
         for (char element : str.toCharArray()) {
-            var convertedElement = String.valueOf(element);
+            var convertedElement = String.valueOf(element).toLowerCase();
 
             if (charFrequency.get(element) == null) {
                 charFrequency.put(element, 1);

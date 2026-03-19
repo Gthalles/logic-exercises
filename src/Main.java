@@ -8,7 +8,7 @@ public static void main() {
     Integer[] arr = {55, 44, 33, 22, 11, 0};
     ArrayUtils arrUtils = new ArrayUtils(arr);
 
-    String str = "thalles garbelotti";
+    String str = "Thalles Garbelotti";
     StringUtils strUtils = new StringUtils(str);
 
     IO.println("Arrays Section");
