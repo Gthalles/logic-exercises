@@ -5,7 +5,7 @@ public class ArrayUtils {
 
     public ArrayUtils(Integer[] arr) {
         if (arr.length == 0) {
-            throw new Error("Array must elements");
+            throw new Error("Array must have at least one element");
         }
 
         this.arr = arr;
