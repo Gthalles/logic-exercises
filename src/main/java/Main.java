@@ -61,8 +61,8 @@ public class Main {
         var strWithoutDuplicates = strUtils.removeDuplicates();
         printer.write("String without duplicates", strWithoutDuplicates);
 
-        var isAnagram = strUtils.isAnagram("ittolebraG sellahT");
-        printer.write("Is anagram?", isAnagram);
+        var isAnagram = strUtils.isAnagram(reversedStr);
+        printer.write(str + " and " + reversedStr + " is anagram?", isAnagram);
 
         var stringWithoutSpaces = strUtils.encodeString();
         printer.write("Replace spaces with %20", stringWithoutSpaces);
