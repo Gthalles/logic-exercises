@@ -69,5 +69,32 @@ public class Main {
 
         var biggestSubstring = strUtils.findBiggestSubstringWithoutRepeatedCharacter();
         printer.write("Substring without repeated chars", biggestSubstring);
+
+        // Grid
+        int[][] grid = {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}
+        };
+
+        var gridUtils = new Grid();
+
+        System.out.println("\nGRID - 1\n");
+        gridUtils.printGrid(grid);
+
+        System.out.println("\nGRID - 2\n");
+        gridUtils.printNeighbors(grid, 1, 1);
+
+        System.out.println("\nGRID - 3\n");
+        int[][] grid2 = {
+                {0, 0, 0},
+                {0, 1, 0},
+                {0, 0, 0}
+        };
+
+        gridUtils.simplePropagate(grid2);
+
+        System.out.println("\nGRID - 4\n");
+        gridUtils.propagate(grid2);
     }
 }
