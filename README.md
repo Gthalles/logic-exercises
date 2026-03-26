@@ -49,3 +49,10 @@ mvn exec:java
 6. Verificar se duas strings sao anagramas.
 7. Substituir espacos por `%20` (estilo URL encoding).
 8. Encontrar a maior substring sem caracteres repetidos.
+
+### Grid & BFS
+
+1. Percorrer uma grid 2D e imprimir `(i,j) = valor` para cada posição.
+2. Dado um ponto `(i, j)`, imprimir seus vizinhos válidos (cima, baixo, esquerda, direita) sem sair da grid.
+3. Dada uma grid com um `1`, espalhar esse valor para os vizinhos diretos (usar uma nova matriz).
+4. Implementar BFS para calcular a distância mínima de cada célula até um ponto inicial (`1` vira `0`, vizinhos `1`, próximos `2`, etc).
