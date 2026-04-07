@@ -93,8 +93,18 @@ public class Main {
         };
 
         gridUtils.simplePropagate(grid2);
-
         System.out.println("\nGRID - 4\n");
         gridUtils.propagate(grid2);
+
+        System.out.println("\nGRID - 5\n");
+        String[][] circuit = {
+                {"S", "W", "W", "W"},
+                {".", "B", "W", "W"},
+                {".", "S", "W", "W"},
+                {".", "S", "W", "W"}
+        };
+
+        gridUtils.propagateEnergy(circuit);
+
     }
 }

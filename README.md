@@ -56,3 +56,18 @@ mvn exec:java
 2. Dado um ponto `(i, j)`, imprimir seus vizinhos válidos (cima, baixo, esquerda, direita) sem sair da grid.
 3. Dada uma grid com um `1`, espalhar esse valor para os vizinhos diretos (usar uma nova matriz).
 4. Implementar BFS para calcular a distância mínima de cada célula até um ponto inicial (`1` vira `0`, vizinhos `1`, próximos `2`, etc).
+5. Simule propagação de energia em uma grid
+
+    Valores possíveis:
+    "S" → fonte (energia inicial 5)
+    "W" → fio (transmite energia)
+    "B" → bloco (bloqueia)
+    "." → vazio (ignorar)
+
+    Regras:
+    energia começa em 5 nas fontes
+    a cada passo, energia diminui 1
+    energia não propaga quando chega em 0
+    só pode propagar em "W"
+    não atravessa "B"
+    se um "W" receber energia de múltiplos caminhos, manter o maior valor

@@ -1,5 +1,4 @@
     import java.util.Arrays;
-    import java.util.LinkedHashMap;
     import java.util.LinkedList;
     import java.util.Queue;
 
@@ -145,6 +144,61 @@
 
             for (int[] array : result) {
                 System.out.println(Arrays.toString(array));
+            }
+
+            return result;
+        }
+
+        int[][] propagateEnergy(String[][] grid) {
+            if (grid.length == 0 || grid[0].length == 0) {
+                return new int[0][0];
+            }
+
+            Queue<int[]> queue = new LinkedList<int[]>();
+            var result = new int[grid.length][grid[0].length];
+
+            int[][] directions = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+
+            for (int i = 0; i < grid.length; i++) {
+                for (int j = 0; j < grid[0].length; j++) {
+                    var element = grid[i][j];
+
+                    if (!"S".equals(element)) continue;
+
+                    result[i][j] = 15;
+                    queue.add(new int[]{i, j, 15});
+                }
+            }
+
+            while (!queue.isEmpty()) {
+                var element = queue.poll();
+                var i = element[0];
+                var j = element[1];
+                var energy = element[2];
+
+                if (energy <= 1) continue;
+
+                for (int[] direction : directions) {
+                    var ni = i + direction[0];
+                    var nj = j + direction[1];
+                    var energyResult = energy - 1;
+
+                    var isValidBlock = ni >= 0 && ni < grid.length && nj >= 0 && nj < grid[0].length;
+                    if (!isValidBlock) continue;
+
+                    var originalBlock = grid[ni][nj];
+                    if (!"W".equals(originalBlock)) continue;
+
+                    if (energyResult <= result[ni][nj]) continue;
+
+                    result[ni][nj] = energyResult;
+                    queue.add(new int[]{ni, nj, energyResult});
+                }
+            }
+
+            for (int[] arr : result) {
+                var stringArr = Arrays.toString(arr);
+                System.out.println(stringArr);
             }
 
             return result;
